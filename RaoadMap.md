@@ -57,6 +57,19 @@ Key concepts:
 - Weights in models  
 - Transformations
 
+# Beyond 2D
+
+In Machine Learning, we often deal with higher-dimensional arrays. Technically, these are not called matrices—they have special names depending on their dimensionality:
+
+| Dimension | Name    | Example in ML |
+|-----------|---------|---------------|
+| 1D        | Vector  | `[1, 2, 3]` (feature vector) |
+| 2D        | Matrix  | Dataset with `rows = samples`, `columns = features` |
+| 3D        | Tensor  | Sequence of matrices, e.g., video frames `(frames × height × width)` |
+| 4D+       | Tensor  | Batch of images `(batch × channels × height × width)` |
+
+
+
 ---
 
 ## 3. Norms and Distances (High Priority)
