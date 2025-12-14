@@ -10,11 +10,38 @@ Compact roadmap of linear algebra topics for machine learning basics:
 - **Definition:** magnitude + direction
 - **Operations:** addition, subtraction, scalar multiplication
 - **Dot product** and its geometric meaning (angle, projection)
+- 
 
 **ML relevance:**  
 - Represent features  
 - Compute similarity  
 - Linear models
+
+## Vector Norms
+
+The norm (magnitude) of a vector \( \mathbf{v} \) is defined as:
+
+||v|| = sqrt(v1^2 + v2^2 + ... + vn^2)
+
+**Why ML cares:**  
+- Normalization of features  
+- Distance computation  
+- Regularization (L2 norm)  
+- Gradient scaling  
+
+## Vector Spaces
+
+Key concepts:  
+- Linear combinations  
+- Span  
+- Basis  
+- Dimension  
+
+**Why ML cares:**  
+- Feature representation  
+- Dimensionality reduction (e.g., PCA, embeddings)
+
+
 
 ---
 
