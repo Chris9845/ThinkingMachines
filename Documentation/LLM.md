@@ -15,6 +15,9 @@ graph TD
     I --> J[Sampling / Decoding]
 ```
 
+
+
+## Mathematical Foundations for Neural Networks & Transformers
 ### Check-list of math for transformer level understanding
 ```text
 Vectors + matrices → linear layers
@@ -25,78 +28,147 @@ Gradients → how to fix it
 Nonlinearities → learning power
 Normalization → stability
 ```
-1. Linear Algebra
+## 1. Linear Algebra
 
-1.1 Vectors
-Represent Emebedding vectors, Hidden states, Neuron activations
-h ∈ ℝ⁴⁰⁹⁶
+### 1.1 Vectors
+Represent:
+- Embedding vectors
+- Hidden states
+- Neuron activations
 
-1.2 Matrices
-Represent weights
-W ∈ ℝ⁴⁰⁹⁶×⁴⁰⁹⁶
+Example: h ∈ ℝ⁴⁰⁹⁶
 
-1.3 Matrix multiplication
-X x W
-Combine information using weights
-Used in Linear Layers, QKV Projections, Output Logits
 
-1.4 Dot Product
-Measure similarity
-Used in Attention ( Q.K)
-Logits (Hidden . Embedding)
+### 1.2 Matrices
+Represent model weights.
 
-1.5 Transpose
+Example: W ∈ ℝ⁴⁰⁹⁶×⁴⁰⁹⁶
+
+
+### 1.3 Matrix Multiplication
+X × W
+Used to combine information using weights.
+
+Common Uses:
+- Linear Layers
+- QKV Projections
+- Output Logits
+
+### 1.4 Dot Product
+Measures similarity between vectors.
+
+Common Uses:
+- Attention: `Q · K`
+- Logits: `Hidden · Embedding`
+
+### 1.5 Transpose
 Wᵀ
-Used when switching b/w iinput space and output space
+Used when switching between input space and output space.
 
-2. Geometry & Norms
-2.1 Vector Norm
-L2 Norm => ||x|| = sqrt(sum(xᵢ²))
+---
 
-Used in Normalization, scaling attention scores
+## 2. Geometry & Norms
 
-2.2 Cosine Similarity
-cos(θ) = (a·b) / (||a|| ||b||)
-Dot Product without magnitude
+### 2.1 Vector Norm (L2 Norm)
+||x|| = sqrt(sum(xᵢ²))
 
-Used in understanding embeddings, similarity-based reasoning.
+Used in:
+- Normalization
+- Scaling attention scores
 
-3. Non-Linear Activation Functions
-   RELU
-   GELU
+### 2.2 Cosine Similarity
+cos(θ) = (a · b) / (||a|| ||b||)
 
-4. Probability & Distributions
-4.1 Softmax
-    softmax(zᵢ) = exp(zᵢ) / sum(exp(z))
-    Turn Logits into probabilities.
+Dot product without magnitude.
 
-4.2 Temperature Scaling
-    softmax(z / T)
-    Used to control randomness. 
-    Low temperature - less random (same output)  --> Good to legal document analysis.
-    High Temperatue - more randomness (different output) --> good for chatbot
+Used in:
+- Embedding similarity
+- Similarity-based reasoning
 
-5. Loss & Information Theory
+---
 
-5.1 Cross-Entropy Loss
-    −log(P(correct))
+## 3. Non-Linear Activation Functions
 
-5.2 Negative Log Likelyhood Loss (NLLLOSS)
-    Similar to cross-entropy loss for classification
+- ReLU
+- GELU
 
-6. Calculus
+## 4. Probability & Distributions
 
-6.1 Derivative
-    Measure how one value changes when anoter changes
+### 4.1 Softmax
+softmax(zᵢ) = exp(zᵢ) / sum(exp(z))
+Turns logits into probabilities.
 
-6.2 Gradient Descent
-    Vector of Derivatives
-    Indicates direction to reduce loss, how much to change weights
+### 4.2 Temperature Scaling
+softmax(z / T)
 
-6.3 Chain-Rule
-    Backpropgation - how gradients flow through Neuron Layers
 
-6.4 
+Controls randomness:
+- **Low temperature** → Less random, more deterministic  
+  - Good for legal document analysis
+- **High temperature** → More random, more creative  
+  - Good for chatbots and creative tasks
+
+
+## 5. Loss & Information Theory
+
+### 5.1 Cross-Entropy Loss
+−log(P(correct))
+
+
+### 5.2 Negative Log Likelihood Loss (NLLLoss)
+Similar to cross-entropy loss for classification tasks.
+
+
+## 6. Calculus
+
+### 6.1 Derivative
+Measures how one value changes when another changes.
+
+### 6.2 Gradient
+Vector of derivatives.
+- Indicates direction to reduce loss
+- Determines how weights should change
+
+### 6.3 Chain Rule
+Used in backpropagation to compute gradients through neural network layers.
+
+
+## 7. Optimization
+
+### 7.1 Gradient Descent
+weight = weight - lr × gradient
+
+
+### 7.2 Learning Rate
+Controls the size of weight updates during training.
+
+### 7.3 Adam Optimizer
+Adaptive optimization algorithm with:
+- Momentum
+- Adaptive learning rates
+
+
+## 8. Normalization & Stability
+
+### 8.1 Mean & Variance
+Used in Layer Normalization.
+
+### 8.2 Layer Normalization
+(x - mean) / std
+
+Keeps activations stable across layers.
+
+
+## 9. Attention-Specific Mathematics
+
+### 9.1 Scaled Dot-Product Attention
+softmax(QKᵀ / √d)
+
+
+### 9.2 Masking
+Prevents the model from seeing future tokens.
+- Sets logits to `−∞` before softmax.
+ 
     
    
  
