@@ -15,6 +15,95 @@ graph TD
     I --> J[Sampling / Decoding]
 ```
 
+### Check-list of math for transformer level understanding
+```text
+Vectors + matrices → linear layers
+Dot products → similarity
+Softmax → probabilities
+Cross entropy → how wrong we were
+Gradients → how to fix it
+Nonlinearities → learning power
+Normalization → stability
+```
+1. Linear Algebra
+
+1.1 Vectors
+Represent Emebedding vectors, Hidden states, Neuron activations
+h ∈ ℝ⁴⁰⁹⁶
+
+1.2 Matrices
+Represent weights
+W ∈ ℝ⁴⁰⁹⁶×⁴⁰⁹⁶
+
+1.3 Matrix multiplication
+X x W
+Combine information using weights
+Used in Linear Layers, QKV Projections, Output Logits
+
+1.4 Dot Product
+Measure similarity
+Used in Attention ( Q.K)
+Logits (Hidden . Embedding)
+
+1.5 Transpose
+Wᵀ
+Used when switching b/w iinput space and output space
+
+2. Geometry & Norms
+2.1 Vector Norm
+L2 Norm => ||x|| = sqrt(sum(xᵢ²))
+
+Used in Normalization, scaling attention scores
+
+2.2 Cosine Similarity
+cos(θ) = (a·b) / (||a|| ||b||)
+Dot Product without magnitude
+
+Used in understanding embeddings, similarity-based reasoning.
+
+3. Non-Linear Activation Functions
+   RELU
+   GELU
+
+4. Probability & Distributions
+4.1 Softmax
+    softmax(zᵢ) = exp(zᵢ) / sum(exp(z))
+    Turn Logits into probabilities.
+
+4.2 Temperature Scaling
+    softmax(z / T)
+    Used to control randomness. 
+    Low temperature - less random (same output)  --> Good to legal document analysis.
+    High Temperatue - more randomness (different output) --> good for chatbot
+
+5. Loss & Information Theory
+
+5.1 Cross-Entropy Loss
+    −log(P(correct))
+
+5.2 Negative Log Likelyhood Loss (NLLLOSS)
+    Similar to cross-entropy loss for classification
+
+6. Calculus
+
+6.1 Derivative
+    Measure how one value changes when anoter changes
+
+6.2 Gradient Descent
+    Vector of Derivatives
+    Indicates direction to reduce loss, how much to change weights
+
+6.3 Chain-Rule
+    Backpropgation - how gradients flow through Neuron Layers
+
+6.4 
+    
+   
+ 
+
+
+
+
 
 ### 🧩 Step 1 — Tokenization (`Text` → `IDs`)
 The model breaks raw strings into sub-word units and maps them to unique integers from its vocabulary.
