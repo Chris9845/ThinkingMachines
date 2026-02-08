@@ -65,7 +65,6 @@ Common Uses:
 Wᵀ
 Used when switching between input space and output space.
 
----
 
 ## 2. Geometry & Norms
 
@@ -85,7 +84,6 @@ Used in:
 - Embedding similarity
 - Similarity-based reasoning
 
----
 
 ## 3. Non-Linear Activation Functions
 
@@ -172,9 +170,6 @@ Prevents the model from seeing future tokens.
     
    
  
-
-
-
 
 
 ### 🧩 Step 1 — Tokenization (`Text` → `IDs`)
